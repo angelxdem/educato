@@ -189,21 +189,72 @@
                         class="contact-form"
                       >
                         <label
-                          ><i class="icon fal fa-envelope"></i> Email</label
+                          ><i class="icon fa-solid fa-envelope"></i> Email</label
                         >
                         <input
                           type="text"
-                          id="email2"
-                          name="email2"
+                          
+                          name="email2" 
                           class="header-input"
+                          id="header-input"
                           placeholder="Ваша електронна пошта..."
                           required
                         />
-                        <button class="btn header-btn">Підписатися</button>
+                        <button class="btn header-btn" id="registerBtn">Підписатися</button>
                       </div>
                     </div>
                   </div>
                 </div>
+                <div id="registrationModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h1>Вітаю</h1>
+                    <h3>Ви успішно зареєстровані!</h3>
+                  </div>
+                </div>
+                <script>
+                  function openModal() {
+    var modal = document.getElementById("registrationModal");
+    modal.style.display = "block";
+  
+    // Очистити вміст форми
+    document.getElementById("header-input").value = "";
+}
+
+// Закрити модальне вікно
+function closeModal() {
+    var modal = document.getElementById("registrationModal");
+    modal.style.display = "none";
+}
+
+// Додати обробник події для кнопки
+document.getElementById("registerBtn").addEventListener("click", function() {
+    openModal();
+});
+                  </script>
+                <style>
+                  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+                  </style>
                 <div class="col-lg-5">
                   <div
                     class="slider-img"
@@ -306,7 +357,7 @@
             <div class="col-lg-4 col-md-12">
               <div class="single-post2 mb-30 wow fadeInDown animated">
                 <div class="blog-thumb2">
-                  <img src="img/tutors/1.jpg" alt="img"
+                  <img src="img/tutors/1.jpg" alt="img" style="height: 200px; object-fit: cover;"
                   />
                 </div>
                 <div class="blog-content2 text-center">
@@ -331,7 +382,7 @@
             <div class="col-lg-4 col-md-12">
               <div class="single-post2 mb-30 wow fadeInUp animated">
                 <div class="blog-thumb2">
-                  <img src="img/tutors/2.jpg" alt="img"
+                  <img src="img/tutors/2.jpg" alt="img" style="height: 200px; object-fit: cover;"
                   />
                 </div>
                 <div class="blog-content2 text-center">
@@ -355,7 +406,7 @@
             <div class="col-lg-4 col-md-12">
               <div class="single-post2 mb-30 wow fadeInDown animated">
                 <div class="blog-thumb2">
-                  <img src="img/tutors/3.jpg" alt="img"
+                  <img src="img/tutors/3.jpg" alt="img" style="height: 200px; object-fit: cover;"
                   />
                 </div>
                 <div class="blog-content2 text-center">
@@ -403,19 +454,19 @@
                             <h2>Як приєднатися?</h2>
                             <ul class="pr-ul">
                                 <li>
-                                    <div class="icon"><i class="fal fa-check"></i></div>
+                                    <div class="icon"><i class="fa-solid fa-check"></i></div>
                                     <div class="text pt-10">
                                         🖱️ Натисніть на кнопку "Приєднатися" нижче.
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="icon"><i class="fal fa-check"></i></div>
+                                    <div class="icon"><i class="fa-solid fa-check"></i></div>
                                     <div class="text pt-10">
                                         📧 Вкажіть вашу електронну адресу, щоб ми могли вас повідомити про подробиці та надіслати матеріали для уроку.
                                     </div>
                                 </li>
                                  <li>
-                                    <div class="icon"><i class="fal fa-check"></i></div>
+                                    <div class="icon"><i class="fa-solid fa-check"></i></div>
                                     <div class="text pt-10">
                                         🗓️ Запишіться на урок у зручний для вас час.
                                     </div>
@@ -680,10 +731,40 @@
                     </div>	
                    
                     <div class="col-lg-12 align-items-center">                             
-                        <button class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s">Приєднатися</button>        
+                        <button class="btn ss-btn" id="register2Btn" data-animation="fadeInRight" data-delay=".8s">Приєднатися</button>        
                     </div>
         
             </form>
+            <div id="registration2Modal" class="modal">
+              <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h1>Вітаю</h1>
+                <h3>Ви успішно зареєстровані!</h3>
+              </div>
+            </div>
+            <script>
+              function openModal() {
+var modal = document.getElementById("registration2Modal");
+modal.style.display = "block";
+
+// Очистити вміст форми
+document.getElementById("firstn").value = "";
+document.getElementById("lastn").value = "";
+document.getElementById("email").value = "";
+document.getElementById("phone").value = "";
+}
+
+// Закрити модальне вікно
+function closeModal() {
+var modal = document.getElementById("registration2Modal");
+modal.style.display = "none";
+}
+
+// Додати обробник події для кнопки
+document.getElementById("register2Btn").addEventListener("click", function() {
+openModal();
+});
+              </script>
                  
                 </div>
             
@@ -760,5 +841,6 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/element-in-view.js"></script>
     <script src="js/main.js"></script>
+    <script src="https://kit.fontawesome.com/7aa02e1a5f.js" crossorigin="anonymous"></script>
   </body>
 </html>
